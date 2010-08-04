@@ -18,7 +18,7 @@ class PlexThemeMusicAgent(Agent.TV_Shows):
       )    
     )
     
-  def update(self, metadata, lang):
+  def update(self, metadata, media, lang):
     if THEME_URL % metadata.id not in metadata.themes:
       try:
         metadata.themes[THEME_URL % metadata.id] = Proxy.Media(HTTP.Request(THEME_URL % metadata.id))

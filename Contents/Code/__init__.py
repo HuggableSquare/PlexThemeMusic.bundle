@@ -6,7 +6,7 @@ def Start():
   
 class PlexThemeMusicAgent(Agent.TV_Shows):
   name = 'Plex Theme Music'
-  languages = [Locale.Language.English]
+  languages = [Locale.Language.NoLanguage]
   primary_provider = False
   contributes_to = ['com.plexapp.agents.thetvdb']
   

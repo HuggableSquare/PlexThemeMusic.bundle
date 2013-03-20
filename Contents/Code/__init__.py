@@ -9,15 +9,15 @@ class PlexThemeMusicAgent(Agent.TV_Shows):
   languages = [Locale.Language.NoLanguage]
   primary_provider = False
   contributes_to = ['com.plexapp.agents.thetvdb']
-  
+
   def search(self, results, media, lang):
     results.Append(
       MetadataSearchResult(
-        id    = media.primary_metadata.id.replace('tt',''),
+        id    = media.primary_metadata.id,
         score = 100
       )    
     )
-    
+
   def update(self, metadata, media, lang):
     if THEME_URL % metadata.id not in metadata.themes:
       try:

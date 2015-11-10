@@ -3,17 +3,16 @@ THEME_URL = 'http://tvthemes.plexapp.com/%s.mp3'
 
 def Start():
   HTTP.CacheTime = CACHE_1DAY
-  
+
 class PlexThemeMusicAgent(Agent.TV_Shows):
   name = 'Plex Theme Music DVD Order'
   languages = [Locale.Language.NoLanguage]
   primary_provider = False
   contributes_to = [
-	'com.plexapp.agents.thetvdbdvdorder'
+    'com.plexapp.agents.thetvdbdvdorder'
   ]
 
   def search(self, results, media, lang):
-
     if media.primary_agent == 'com.plexapp.agents.thetvdbdvdorder':
       results.Append(MetadataSearchResult(
         id = media.primary_metadata.id,
